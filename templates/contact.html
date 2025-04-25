@@ -56,95 +56,47 @@
     </div>
 </section>
 
-<!-- Contact Form Section -->
-<section class="contact-form-section py-5 bg-light">
+<!-- Contact Details Section -->
+<section class="contact-details-section py-5 bg-light">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="section-title-container text-center mb-5">
-                    <h2 class="section-title">Küldjön üzenetet</h2>
-                    <p class="section-subtitle">Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot</p>
+                    <h2 class="section-title">Vegye fel velünk a kapcsolatot</h2>
+                    <p class="section-subtitle">Az alábbi elérhetőségeken várjuk megkeresését</p>
                 </div>
-                <div class="contact-form-card bg-white p-4 p-md-5 rounded shadow-sm">
-                    {% with messages = get_flashed_messages(with_categories=true) %}
-                        {% if messages %}
-                            {% for category, message in messages %}
-                                <div class="alert alert-{{ category }} alert-dismissible fade show mb-4" role="alert">
-                                    {{ message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                    
-                    <form method="POST" action="{{ url_for('contact') }}">
-                        {{ form.csrf_token }}
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label for="{{ form.name.id }}" class="form-label">{{ form.name.label }}</label>
-                                    {{ form.name(class="form-control", placeholder="Adja meg a nevét") }}
-                                    {% if form.name.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {% for error in form.name.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
+                <div class="contact-details-card bg-white p-4 p-md-5 rounded shadow-sm">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div class="contact-details-item mb-4">
+                                <h3 class="h5 mb-3"><i class="fas fa-envelope text-primary me-2"></i> Email</h3>
+                                <p class="mb-0 lead">
+                                    <a href="mailto:spederfelujitas@gmail.com" class="text-dark">spederfelujitas@gmail.com</a>
+                                </p>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label for="{{ form.email.id }}" class="form-label">{{ form.email.label }}</label>
-                                    {{ form.email(class="form-control", placeholder="Adja meg az email címét") }}
-                                    {% if form.email.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {% for error in form.email.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
+                            <div class="contact-details-item mb-4">
+                                <h3 class="h5 mb-3"><i class="fas fa-phone-alt text-primary me-2"></i> Telefonszám</h3>
+                                <p class="mb-0 lead">
+                                    <a href="tel:+36201234567" class="text-dark">+36 20 123 4567</a>
+                                </p>
                             </div>
-                            <div class="col-12">
-                                <div class="form-group mb-3">
-                                    <label for="{{ form.phone.id }}" class="form-label">{{ form.phone.label }}</label>
-                                    {{ form.phone(class="form-control", placeholder="Adja meg a telefonszámát") }}
-                                    {% if form.phone.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {% for error in form.phone.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group mb-3">
-                                    <label for="{{ form.message.id }}" class="form-label">{{ form.message.label }}</label>
-                                    {{ form.message(class="form-control", rows="5", placeholder="Írja le, miben segíthetünk") }}
-                                    {% if form.message.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {% for error in form.message.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="privacyCheck" required>
-                                    <label class="form-check-label small" for="privacyCheck">
-                                        Elolvastam és elfogadom az <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">adatvédelmi tájékoztatót</a>.
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">Üzenet küldése</button>
+                            <div class="contact-details-item">
+                                <h3 class="h5 mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> Munkaterület</h3>
+                                <p class="mb-0 lead">Sopron és környéke</p>
                             </div>
                         </div>
-                    </form>
+                        <div class="col-md-6 text-center">
+                            <div class="contact-image-container">
+                                <i class="fas fa-headset text-primary" style="font-size: 8rem;"></i>
+                                <p class="mt-4">Keressen minket bizalommal, és segítünk megvalósítani elképzeléseit!</p>
+                                <div class="mt-4">
+                                    <a href="tel:+36201234567" class="btn btn-primary btn-lg rounded-pill px-4">
+                                        <i class="fas fa-phone me-2"></i>Hívás most
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
