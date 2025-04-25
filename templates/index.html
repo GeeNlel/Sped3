@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+
+{% block title %}Spéder Felújítás - Festés, belső felújítások{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="hero-content text-white">
+                <h1 class="display-4 fw-bold mb-4">Újítsd meg az otthonod velünk!</h1>
+                <p class="lead mb-4">Festés, belső felújítások – ha szeretnéd felfrissíteni a lakásod vagy az irodád, mi segítünk!</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg me-3 px-4 rounded-pill">Ingyenes árajánlat</a>
+                    <a href="{{ url_for('references') }}" class="btn btn-outline-light btn-lg px-4 rounded-pill">Referenciák</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Szolgáltatásaink</h2>
+                <p class="section-subtitle">Komplex felújítási szolgáltatásokat nyújtunk, hogy otthona vagy irodája tökéletes legyen.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card h-100">
+                    <div class="icon-box text-primary mb-4">
+                        <i class="fas fa-paint-roller fa-3x"></i>
+                    </div>
+                    <h3 class="service-title h5 mb-3">Festés</h3>
+                    <p class="service-description">Professzionális festési szolgáltatások minden helyiségbe, a konyháktól a fürdőszobákon át a tárgyalótermekig, minőségi festékekkel és precíz kivitelezéssel.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card h-100">
+                    <div class="icon-box text-primary mb-4">
+                        <i class="fas fa-hammer fa-3x"></i>
+                    </div>
+                    <h3 class="service-title h5 mb-3">Belső felújítás</h3>
+                    <p class="service-description">Teljes belső felújítás, beleértve a gipszkartonozást, burkolást, villanyszerelést, vízszerelést és a kiegészítő munkálatokat is.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card h-100">
+                    <div class="icon-box text-primary mb-4">
+                        <i class="fas fa-home fa-3x"></i>
+                    </div>
+                    <h3 class="service-title h5 mb-3">Lakásfelújítás</h3>
+                    <p class="service-description">Teljes körű lakásfelújítás a tervezéstől a kivitelezésig. Megvalósítjuk elképzeléseit és új életet lehelünk régi otthonába.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us-section py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9" alt="Construction workers" class="img-fluid rounded shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section-title">Miért válasszon minket?</h2>
+                <p class="mb-4">Elhivatott csapatunk garantálja a minőségi munkát és a megbízható szolgáltatást.</p>
+                <div class="feature-list">
+                    <div class="feature mb-3">
+                        <div class="feature-icon text-primary">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4 class="h6 mb-1">Szakértelem és tapasztalat</h4>
+                            <p class="mb-0">Több éves tapasztalattal rendelkező szakemberekkel dolgozunk.</p>
+                        </div>
+                    </div>
+                    <div class="feature mb-3">
+                        <div class="feature-icon text-primary">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4 class="h6 mb-1">Minőségi anyagok</h4>
+                            <p class="mb-0">Kizárólag prémium minőségű anyagokkal dolgozunk a tartós eredményért.</p>
+                        </div>
+                    </div>
+                    <div class="feature mb-3">
+                        <div class="feature-icon text-primary">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4 class="h6 mb-1">Rugalmas ütemezés</h4>
+                            <p class="mb-0">Alkalmazkodunk az Ön időbeosztásához és igényeihez.</p>
+                        </div>
+                    </div>
+                    <div class="feature mb-3">
+                        <div class="feature-icon text-primary">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4 class="h6 mb-1">Precíz kivitelezés</h4>
+                            <p class="mb-0">A részletekre is odafigyelünk, hogy tökéletes végeredményt érjünk el.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon text-primary">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4 class="h6 mb-1">Tiszta munkavégzés</h4>
+                            <p class="mb-0">Munka után mindig kitakarítunk, rendezett környezetet hagyunk magunk után.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{{ url_for('about') }}" class="btn btn-primary rounded-pill px-4">Tudjon meg többet rólunk</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Elégedett ügyfeleink mondták</h2>
+                <p class="section-subtitle">Csapatunk büszke arra, hogy ügyfeleinktől rendszeresen pozitív visszajelzéseket kapunk.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card h-100">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating text-primary mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text mb-4">"Kiváló munkát végeztek a nappalim és a konyhám felújításán. Gyors, pontos és rugalmas csapat, mindenképp ajánlom őket!"</p>
+                        <div class="testimonial-author">
+                            <h4 class="h6 mb-1">Példa Béla</h4>
+                            <p class="mb-0 text-muted">Sopron</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card h-100">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating text-primary mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text mb-4">"Nagyon elégedett vagyok a lakásom teljes belső felújításával. Korrekt áron, profi minőségben dolgoztak, és tartották a határidőket is."</p>
+                        <div class="testimonial-author">
+                            <h4 class="h6 mb-1">Minta Katalin</h4>
+                            <p class="mb-0 text-muted">Sopron</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card h-100">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating text-primary mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text mb-4">"Az irodám felújítását bíztam rájuk, és nem csalódtam. Professzionális hozzáállás, remek kommunikáció és kiváló minőségű munka jellemzi őket."</p>
+                        <div class="testimonial-author">
+                            <h4 class="h6 mb-1">Próba János</h4>
+                            <p class="mb-0 text-muted">Fertőd</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 bg-primary text-white text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Kérjen ingyenes árajánlatot még ma!</h2>
+                <p class="lead mb-4">Ingyenes felmérés Sopronban és környékén. Vegye fel velünk a kapcsolatot és kezdjük el együtt megvalósítani álmai otthonát!</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg px-4 rounded-pill me-3">Kapcsolatfelvétel</a>
+                    <a href="tel:+36201234567" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                        <i class="fas fa-phone me-2"></i>+36 20 123 4567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Projects Section -->
+<section class="projects-section py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Legutóbbi projektjeink</h2>
+                <p class="section-subtitle">Tekintse meg néhány nemrégiben befejezett munkánkat</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="Modern nappali felújítás" class="img-fluid">
+                        <div class="project-overlay">
+                            <a href="{{ url_for('references') }}" class="btn btn-light rounded-pill">Részletek</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="h5 mb-2">Modern nappali felújítás</h3>
+                        <p class="mb-0">Sopron, 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1489171078254-c3365d6e359f" alt="Konyha renoválás" class="img-fluid">
+                        <div class="project-overlay">
+                            <a href="{{ url_for('references') }}" class="btn btn-light rounded-pill">Részletek</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="h5 mb-2">Konyha renoválás</h3>
+                        <p class="mb-0">Fertőrákos, 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88" alt="Iroda felújítás" class="img-fluid">
+                        <div class="project-overlay">
+                            <a href="{{ url_for('references') }}" class="btn btn-light rounded-pill">Részletek</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="h5 mb-2">Iroda felújítás</h3>
+                        <p class="mb-0">Sopron, 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="{{ url_for('references') }}" class="btn btn-outline-primary rounded-pill px-4">Összes referenciamunka</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

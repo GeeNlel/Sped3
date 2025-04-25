@@ -1,0 +1,342 @@
+{% extends 'base.html' %}
+
+{% block title %}Árak - Spéder Felújítás{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-image" style="background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="page-header-content text-white text-center">
+                <h1 class="display-4 fw-bold">Árak</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="{{ url_for('index') }}" class="text-white">Főoldal</a></li>
+                        <li class="breadcrumb-item active text-white-50" aria-current="page">Árak</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Introduction -->
+<section class="pricing-intro py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Árkalkulációnk</h2>
+                <p class="section-subtitle">Átlátható, versenyképes árakkal dolgozunk, egyedi igényekre szabva</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="pricing-info-card bg-light p-4 p-md-5 rounded">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3 class="h4 mb-4">Hogyan kalkuláljuk árainkat?</h3>
+                            <p>Minden projektünk egyedi, ezért áraink is az adott munka jellegétől, méretétől és a szükséges anyagoktól függően változnak. Az alábbiakban tájékoztató jellegű árakat talál, de pontos árajánlatot minden esetben ingyenes helyszíni felmérést követően tudunk adni.</p>
+                            <p class="mb-0">Az árajánlat tartalmazza:</p>
+                            <ul class="mb-0 mt-3">
+                                <li>Részletes anyagköltségeket</li>
+                                <li>Munkadíjat</li>
+                                <li>Kivitelezés várható időtartamát</li>
+                                <li>Fizetési ütemezést</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 text-center mt-4 mt-md-0">
+                            <div class="pricing-icon text-primary mb-3">
+                                <i class="fas fa-calculator fa-4x"></i>
+                            </div>
+                            <a href="{{ url_for('contact') }}" class="btn btn-primary rounded-pill px-4">Ingyenes árajánlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Pricing -->
+<section class="service-pricing py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Szolgáltatásaink tájékoztató árai</h2>
+                <p class="section-subtitle">Az alábbi árak tájékoztató jellegűek, a pontos ár a helyszíni felmérés után kerül meghatározásra</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <!-- Painting Prices -->
+            <div class="col-md-6 mb-4">
+                <div class="pricing-card h-100">
+                    <div class="pricing-header bg-primary text-white p-4 rounded-top">
+                        <h3 class="h4 mb-0">Festési munkák</h3>
+                    </div>
+                    <div class="pricing-body p-4">
+                        <div class="pricing-list">
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Falfestés (fehér)</div>
+                                <div class="service-price fw-bold">1500 - 2200 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Falfestés (színes)</div>
+                                <div class="service-price fw-bold">1800 - 2500 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Mennyezetfestés</div>
+                                <div class="service-price fw-bold">1600 - 2300 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Glettelés</div>
+                                <div class="service-price fw-bold">1200 - 1800 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Tapétázás</div>
+                                <div class="service-price fw-bold">2500 - 4000 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between py-3">
+                                <div class="service-name">Díszítőfestés</div>
+                                <div class="service-price fw-bold">Egyedi árajánlat</div>
+                            </div>
+                        </div>
+                        <div class="pricing-notes mt-4">
+                            <p class="small text-muted mb-0">Az árak tartalmazzák a munkadíjat, de nem tartalmazzák az anyagköltséget. Az előkészítő munkálatok (pl. régi festék eltávolítása) külön díjazás ellenében történnek.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Renovation Prices -->
+            <div class="col-md-6 mb-4">
+                <div class="pricing-card h-100">
+                    <div class="pricing-header bg-primary text-white p-4 rounded-top">
+                        <h3 class="h4 mb-0">Belső felújítás</h3>
+                    </div>
+                    <div class="pricing-body p-4">
+                        <div class="pricing-list">
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Csempézés</div>
+                                <div class="service-price fw-bold">6000 - 9000 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Padlóburkolás</div>
+                                <div class="service-price fw-bold">4000 - 7000 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Gipszkartonozás</div>
+                                <div class="service-price fw-bold">4500 - 6500 Ft/m²</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Villanyszerelés</div>
+                                <div class="service-price fw-bold">15000 - 25000 Ft/óra</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between border-bottom py-3">
+                                <div class="service-name">Vízszerelés</div>
+                                <div class="service-price fw-bold">15000 - 25000 Ft/óra</div>
+                            </div>
+                            <div class="pricing-item d-flex justify-content-between py-3">
+                                <div class="service-name">Bontási munkák</div>
+                                <div class="service-price fw-bold">12000 - 20000 Ft/m²</div>
+                            </div>
+                        </div>
+                        <div class="pricing-notes mt-4">
+                            <p class="small text-muted mb-0">Az árak tartalmazzák a munkadíjat, de nem tartalmazzák az anyagköltséget. A törmelék elszállítása külön díjazás ellenében történik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Complete Renovation Packages -->
+            <div class="col-12 mb-4">
+                <div class="pricing-card">
+                    <div class="pricing-header bg-primary text-white p-4 rounded-top">
+                        <h3 class="h4 mb-0">Komplett felújítási csomagok</h3>
+                    </div>
+                    <div class="pricing-body p-4">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="package-card text-center h-100 p-4 border rounded">
+                                    <h4 class="package-name h5 mb-3">Alap csomag</h4>
+                                    <div class="package-price mb-4">
+                                        <span class="price-text h3 text-primary">95 000 - 130 000 Ft</span>
+                                        <span class="price-unit d-block text-muted">/ m²</span>
+                                    </div>
+                                    <div class="package-features mb-4">
+                                        <p class="mb-2">Tartalmazza:</p>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Festés</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Burkolás</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Villanyszerelés</li>
+                                            <li class="mb-2"><i class="fas fa-times text-muted me-2"></i> Vízszerelés</li>
+                                            <li class="mb-2"><i class="fas fa-times text-muted me-2"></i> Bútorzat</li>
+                                        </ul>
+                                    </div>
+                                    <a href="{{ url_for('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Ajánlatkérés</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="package-card text-center h-100 p-4 border rounded bg-light">
+                                    <div class="position-absolute top-0 start-50 translate-middle">
+                                        <span class="badge bg-primary px-3 py-2 rounded-pill">Legnépszerűbb</span>
+                                    </div>
+                                    <h4 class="package-name h5 mb-3">Prémium csomag</h4>
+                                    <div class="package-price mb-4">
+                                        <span class="price-text h3 text-primary">140 000 - 180 000 Ft</span>
+                                        <span class="price-unit d-block text-muted">/ m²</span>
+                                    </div>
+                                    <div class="package-features mb-4">
+                                        <p class="mb-2">Tartalmazza:</p>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Festés</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Burkolás</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Villanyszerelés</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Vízszerelés</li>
+                                            <li class="mb-2"><i class="fas fa-times text-muted me-2"></i> Bútorzat</li>
+                                        </ul>
+                                    </div>
+                                    <a href="{{ url_for('contact') }}" class="btn btn-primary rounded-pill px-4">Ajánlatkérés</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="package-card text-center h-100 p-4 border rounded">
+                                    <h4 class="package-name h5 mb-3">Luxus csomag</h4>
+                                    <div class="package-price mb-4">
+                                        <span class="price-text h3 text-primary">190 000 - 250 000 Ft</span>
+                                        <span class="price-unit d-block text-muted">/ m²</span>
+                                    </div>
+                                    <div class="package-features mb-4">
+                                        <p class="mb-2">Tartalmazza:</p>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Festés</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Burkolás</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Villanyszerelés</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Vízszerelés</li>
+                                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Bútorzat</li>
+                                        </ul>
+                                    </div>
+                                    <a href="{{ url_for('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Ajánlatkérés</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-notes mt-4">
+                            <p class="small text-muted mb-0">A csomagárak tájékoztató jellegűek és tartalmazzák az anyagköltséget is. Az árak a lakás/ház állapotától és a kiválasztott anyagok minőségétől függően változhatnak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Gyakori kérdések</h2>
+                <p class="section-subtitle">Válaszok a leggyakrabban felmerülő kérdésekre</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="pricingFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Hogyan kaphatom meg a pontos árajánlatot?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#pricingFaq">
+                            <div class="accordion-body">
+                                <p>Pontos árajánlatot minden esetben helyszíni felmérés után tudunk adni. A felmérés ingyenes és nem jár semmilyen kötelezettséggel. A felmérés során megbeszéljük az igényeket, felmérjük a terület állapotát és az elvégzendő munkákat. Ezek alapján készítünk egy részletes, írásos árajánlatot, amely tartalmazza az anyag- és munkadíjakat, valamint a kivitelezés várható időtartamát.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Milyen fizetési feltételekkel dolgoznak?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#pricingFaq">
+                            <div class="accordion-body">
+                                <p>Általában a következő fizetési ütemezést alkalmazzuk:</p>
+                                <ul>
+                                    <li>30-40% előleg a szerződéskötéskor</li>
+                                    <li>30-40% a munkálatok félidejében</li>
+                                    <li>A fennmaradó összeg a munka befejezésekor, az átadás-átvételkor</li>
+                                </ul>
+                                <p>Nagyobb projektek esetén egyedi fizetési ütemezés is lehetséges, ezt az árajánlatban részletezzük.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Milyen garanciát vállalnak a munkákra?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#pricingFaq">
+                            <div class="accordion-body">
+                                <p>Az elvégzett munkákra a törvényi előírásoknak megfelelően 1 év garanciát vállalunk. Nagyobb beruházások esetén ez akár 3-5 év is lehet, a munka jellegétől függően. A garancia részleteit a szerződésben rögzítjük.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Mennyi idő alatt végeznek egy átlagos lakásfelújítással?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#pricingFaq">
+                            <div class="accordion-body">
+                                <p>A kivitelezés időtartama nagyban függ a felújítás mértékétől és a lakás méretétől:</p>
+                                <ul>
+                                    <li>Egy egyszerű festés esetén néhány nap.</li>
+                                    <li>Egy szoba komplett felújítása általában 1-2 hét.</li>
+                                    <li>Egy átlagos méretű lakás teljes felújítása 4-8 hét.</li>
+                                    <li>Egy családi ház felújítása 2-6 hónap, a mérettől és a munkálatok mértékétől függően.</li>
+                                </ul>
+                                <p>A pontos időtartamot az árajánlatban határozzuk meg, és a kivitelezés során folyamatosan tájékoztatjuk az ügyfeleinket a projekt állásáról.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Milyen anyagokkal dolgoznak?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#pricingFaq">
+                            <div class="accordion-body">
+                                <p>Kizárólag minőségi, megbízható forrásból származó anyagokkal dolgozunk. Az anyagok kiválasztásában figyelembe vesszük az ügyfél igényeit és költségvetését. Az árajánlatban részletesen felsoroljuk a felhasznált anyagokat és azok mennyiségét.</p>
+                                <p>Igény esetén vállaljuk az anyagbeszerzést is, de az ügyfél által biztosított anyagokkal is dolgozunk. Minden esetben szakmai tanácsadást nyújtunk az optimális anyagválasztáshoz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 bg-primary text-white text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Kész a felújításra? Kérjen árajánlatot most!</h2>
+                <p class="lead mb-4">Ingyenes felmérés Sopronban és környékén. Vegye fel velünk a kapcsolatot és kezdjük el együtt a tervezést!</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg px-4 rounded-pill me-3">Árajánlat kérés</a>
+                    <a href="tel:+36201234567" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                        <i class="fas fa-phone me-2"></i>+36 20 123 4567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

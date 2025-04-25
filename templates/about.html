@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% block title %}Bemutatkozás - Spéder Felújítás{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-image" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="page-header-content text-white text-center">
+                <h1 class="display-4 fw-bold">Bemutatkozás</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="{{ url_for('index') }}" class="text-white">Főoldal</a></li>
+                        <li class="breadcrumb-item active text-white-50" aria-current="page">Bemutatkozás</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="about-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="https://images.unsplash.com/photo-1567954970774-58d6aa6c50dc" alt="Our team" class="img-fluid rounded shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <div class="section-title-container mb-4">
+                    <h2 class="section-title">Rólunk</h2>
+                    <div class="section-title-line"></div>
+                </div>
+                <h3 class="h4 mb-4">Újítsd meg az otthonod velünk!</h3>
+                <p class="mb-4">A Spéder Felújítás csapata több éves szakmai tapasztalattal rendelkező szakemberekből áll, akik szenvedélyesen és elkötelezetten végzik munkájukat. Célunk, hogy ügyfeleinket maximálisan elégedetté tegyük, miközben otthonaikat vagy irodáikat újjávarázsoljuk.</p>
+                <p class="mb-4">Szolgáltatásaink között megtalálható a festés, a belső felújítások és a teljes lakásfelújítás is. Precíz és gyors munkát végzünk, megbízhatóak vagyunk, és különös figyelmet fordítunk arra, hogy munkánk végeztével ne hagyjunk magunk után felfordulást.</p>
+                <div class="row g-4 mt-2">
+                    <div class="col-md-6">
+                        <div class="about-feature">
+                            <div class="about-feature-icon text-primary mb-3">
+                                <i class="fas fa-medal fa-2x"></i>
+                            </div>
+                            <h4 class="h5 mb-2">Profi szakemberek</h4>
+                            <p>Kiváló szakemberekből álló csapatunk garantálja a minőségi munkavégzést.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-feature">
+                            <div class="about-feature-icon text-primary mb-3">
+                                <i class="fas fa-thumbs-up fa-2x"></i>
+                            </div>
+                            <h4 class="h5 mb-2">100% Elégedettség</h4>
+                            <p>Számunkra az ügyfél elégedettsége a legfontosabb, ezért mindig a maximumot nyújtjuk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our History Section -->
+<section class="history-section py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Történetünk</h2>
+                <p class="section-subtitle">Ismerd meg a Spéder Felújítás történetét és értékeit</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year text-primary">2015</div>
+                <div class="timeline-content">
+                    <h3 class="h5 mb-3">A kezdetek</h3>
+                    <p>A vállalkozás alapítója, Minta János, már fiatal korában érdeklődött az építőipar iránt. Képzett szakemberként 2015-ben úgy döntött, hogy önálló vállalkozásba kezd.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year text-primary">2017</div>
+                <div class="timeline-content">
+                    <h3 class="h5 mb-3">Csapatbővítés</h3>
+                    <p>A sikeres projektek hatására a vállalkozás bővülni kezdett. Újabb szakemberek csatlakoztak a csapathoz, hogy még több ügyfél számára tudjunk minőségi szolgáltatást nyújtani.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year text-primary">2019</div>
+                <div class="timeline-content">
+                    <h3 class="h5 mb-3">Szolgáltatásbővítés</h3>
+                    <p>A festési munkálatok mellett új szolgáltatásokkal bővült kínálatunk. Teljes lakásfelújítást, burkolást és egyéb szakipari munkákat is elkezdtünk vállalni.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year text-primary">2021</div>
+                <div class="timeline-content">
+                    <h3 class="h5 mb-3">Modernizáció</h3>
+                    <p>Bevezettük a legújabb technológiákat és korszerű eszközöket a hatékonyabb és minőségibb munkavégzés érdekében. Csapatunk folyamatos képzéseken vesz részt a legújabb trendek elsajátítása céljából.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year text-primary">2023</div>
+                <div class="timeline-content">
+                    <h3 class="h5 mb-3">Jelenleg</h3>
+                    <p>Mára a Spéder Felújítás Sopron és környékének egyik elismert felújítási vállalkozásává nőtte ki magát. Büszkék vagyunk az elégedett ügyfeleinkre és a minőségi munkáinkra.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Team Section -->
+<section class="team-section py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Csapatunk</h2>
+                <p class="section-subtitle">Ismerje meg szakembereinket, akik munkáját garantálják</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="team-card text-center">
+                    <div class="team-image mb-3">
+                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd" alt="Minta János" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="h5 mb-1">Minta János</h3>
+                        <p class="text-muted mb-2">Alapító, Vezető</p>
+                        <p class="small">15+ év tapasztalat a festés és felújítás területén.</p>
+                        <div class="team-social mt-3">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="team-card text-center">
+                    <div class="team-image mb-3">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Példa Béla" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="h5 mb-1">Példa Béla</h3>
+                        <p class="text-muted mb-2">Vezető Szakember</p>
+                        <p class="small">Szaktudását több évtizedes tapasztalat alapozza meg a felújítások területén.</p>
+                        <div class="team-social mt-3">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="team-card text-center">
+                    <div class="team-image mb-3">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6" alt="Teszt Anna" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="h5 mb-1">Teszt Anna</h3>
+                        <p class="text-muted mb-2">Projektmenedzser</p>
+                        <p class="small">Ő gondoskodik a projektek zökkenőmentes lebonyolításáról és a határidők betartásáról.</p>
+                        <div class="team-social mt-3">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="team-card text-center">
+                    <div class="team-image mb-3">
+                        <img src="https://images.unsplash.com/photo-1505409628601-edc9af17fda6" alt="Sablon Gábor" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="h5 mb-1">Sablon Gábor</h3>
+                        <p class="text-muted mb-2">Szakember</p>
+                        <p class="small">Precizitása és kiváló szakmai tudása miatt ügyfeleink kedvence.</p>
+                        <div class="team-social mt-3">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Values Section -->
+<section class="values-section py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Értékeink</h2>
+                <p class="section-subtitle">Alapelveink, amelyek munkánkat vezérlik</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="value-card text-center h-100">
+                    <div class="value-icon text-primary mb-4">
+                        <i class="fas fa-star fa-3x"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Minőség</h3>
+                    <p>Soha nem alkuszunk meg a minőség tekintetében. Kizárólag kiváló anyagokkal dolgozunk és precíz kivitelezést biztosítunk.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card text-center h-100">
+                    <div class="value-icon text-primary mb-4">
+                        <i class="fas fa-handshake fa-3x"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Megbízhatóság</h3>
+                    <p>Betartjuk ígéreteinket, legyen szó határidőkről, árakról vagy kivitelezési részletekről.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card text-center h-100">
+                    <div class="value-icon text-primary mb-4">
+                        <i class="fas fa-comments fa-3x"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Kommunikáció</h3>
+                    <p>Nyíltan és őszintén kommunikálunk ügyfeleinkkel, folyamatosan tájékoztatjuk őket a projekt állásáról.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 bg-primary text-white text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Készen áll a felújításra?</h2>
+                <p class="lead mb-4">Vegye fel velünk a kapcsolatot és kérjen ingyenes helyszíni felmérést Sopronban és környékén!</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg px-4 rounded-pill me-3">Kapcsolatfelvétel</a>
+                    <a href="tel:+36201234567" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                        <i class="fas fa-phone me-2"></i>+36 20 123 4567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

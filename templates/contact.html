@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+
+{% block title %}Kapcsolat - Spéder Felújítás{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-image" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="page-header-content text-white text-center">
+                <h1 class="display-4 fw-bold">Kapcsolat</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="{{ url_for('index') }}" class="text-white">Főoldal</a></li>
+                        <li class="breadcrumb-item active text-white-50" aria-current="page">Kapcsolat</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="contact-info-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="contact-info-card text-center h-100 p-4">
+                    <div class="contact-icon text-primary mb-3">
+                        <i class="fas fa-map-marker-alt fa-3x"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Címünk</h3>
+                    <p class="mb-0">Sopron és környéke</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="contact-info-card text-center h-100 p-4">
+                    <div class="contact-icon text-primary mb-3">
+                        <i class="fas fa-phone-alt fa-3x"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Telefonszámunk</h3>
+                    <p class="mb-0"><a href="tel:+36201234567" class="text-dark">+36 20 123 4567</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-info-card text-center h-100 p-4">
+                    <div class="contact-icon text-primary mb-3">
+                        <i class="fas fa-envelope fa-3x"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Email címünk</h3>
+                    <p class="mb-0"><a href="mailto:spederfelujitas@gmail.com" class="text-dark">spederfelujitas@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-form-section py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title-container text-center mb-5">
+                    <h2 class="section-title">Küldjön üzenetet</h2>
+                    <p class="section-subtitle">Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot</p>
+                </div>
+                <div class="contact-form-card bg-white p-4 p-md-5 rounded shadow-sm">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show mb-4" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    
+                    <form method="POST" action="{{ url_for('contact') }}">
+                        {{ form.csrf_token }}
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="{{ form.name.id }}" class="form-label">{{ form.name.label }}</label>
+                                    {{ form.name(class="form-control", placeholder="Adja meg a nevét") }}
+                                    {% if form.name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.name.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="{{ form.email.id }}" class="form-label">{{ form.email.label }}</label>
+                                    {{ form.email(class="form-control", placeholder="Adja meg az email címét") }}
+                                    {% if form.email.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.email.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group mb-3">
+                                    <label for="{{ form.phone.id }}" class="form-label">{{ form.phone.label }}</label>
+                                    {{ form.phone(class="form-control", placeholder="Adja meg a telefonszámát") }}
+                                    {% if form.phone.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.phone.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group mb-3">
+                                    <label for="{{ form.message.id }}" class="form-label">{{ form.message.label }}</label>
+                                    {{ form.message(class="form-control", rows="5", placeholder="Írja le, miben segíthetünk") }}
+                                    {% if form.message.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.message.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                    <label class="form-check-label small" for="privacyCheck">
+                                        Elolvastam és elfogadom az <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">adatvédelmi tájékoztatót</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">Üzenet küldése</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Working Hours Section -->
+<section class="working-hours-section py-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="section-title mb-4">Nyitvatartás</h2>
+                <div class="working-hours-card bg-primary text-white p-4 p-md-5 rounded">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="day-card p-3 rounded h-100">
+                                <h3 class="h5 mb-3">Hétfő - Péntek</h3>
+                                <p class="time mb-0">8:00 - 17:00</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="day-card p-3 rounded h-100">
+                                <h3 class="h5 mb-3">Szombat</h3>
+                                <p class="time mb-0">8:00 - 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 mb-0">Előzetes egyeztetés alapján más időpontokban is elérhetőek vagyunk!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy Policy Modal -->
+<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyModalLabel">Adatvédelmi tájékoztató</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>1. Bevezetés</h4>
+                <p>A Spéder Felújítás (a továbbiakban: "mi", "minket" vagy "miénk") elkötelezett az Ön személyes adatainak védelme iránt. Ez az adatvédelmi tájékoztató azokat az információkat tartalmazza, amelyeket weboldalunkon gyűjtünk, és hogyan használjuk fel azokat.</p>
+                
+                <h4>2. Milyen adatokat gyűjtünk?</h4>
+                <p>A kapcsolatfelvételi űrlap kitöltésekor a következő személyes adatokat gyűjtjük:</p>
+                <ul>
+                    <li>Név</li>
+                    <li>Email cím</li>
+                    <li>Telefonszám</li>
+                    <li>Az Ön által megadott üzenet tartalma</li>
+                </ul>
+                
+                <h4>3. Hogyan használjuk fel az adatokat?</h4>
+                <p>Az Ön által megadott személyes adatokat a következő célokra használjuk fel:</p>
+                <ul>
+                    <li>Kapcsolattartás Önnel ajánlatkérésével kapcsolatban</li>
+                    <li>Ingyenes felmérés egyeztetése</li>
+                    <li>Tájékoztatás szolgáltatásainkról</li>
+                </ul>
+                
+                <h4>4. Adatmegőrzés</h4>
+                <p>Az Ön személyes adatait addig őrizzük meg, amíg az a célok teljesüléséhez szükséges, vagy amíg Ön nem kéri azok törlését.</p>
+                
+                <h4>5. Az Ön jogai</h4>
+                <p>Az Önnek joga van:</p>
+                <ul>
+                    <li>Hozzáférni az Önről tárolt személyes adatokhoz</li>
+                    <li>Kérni az adatok helyesbítését</li>
+                    <li>Kérni az adatok törlését</li>
+                    <li>Korlátozni az adatok feldolgozását</li>
+                    <li>Adathordozhatósághoz</li>
+                    <li>Tiltakozni az adatfeldolgozás ellen</li>
+                </ul>
+                
+                <h4>6. Kapcsolat</h4>
+                <p>Ha bármilyen kérdése van az adatvédelmi tájékoztatóval kapcsolatban, vagy gyakorolni szeretné jogait, kérjük, vegye fel velünk a kapcsolatot a következő email címen: spederfelujitas@gmail.com</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Bezárás</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 bg-primary text-white text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Sürgős kérdése van?</h2>
+                <p class="lead mb-4">Hívjon minket közvetlenül telefonon, vagy írjon email-t, és a lehető leghamarabb válaszolunk!</p>
+                <div class="cta-buttons">
+                    <a href="tel:+36201234567" class="btn btn-light btn-lg px-4 rounded-pill me-3">
+                        <i class="fas fa-phone me-2"></i>+36 20 123 4567
+                    </a>
+                    <a href="mailto:spederfelujitas@gmail.com" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                        <i class="fas fa-envelope me-2"></i>Email küldése
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

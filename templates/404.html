@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}404 - Az oldal nem található{% endblock %}
+
+{% block content %}
+<!-- Error Section -->
+<section class="error-section py-5 my-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <div class="error-content">
+                    <h1 class="display-1 text-primary fw-bold">404</h1>
+                    <h2 class="mb-4">Az oldal nem található</h2>
+                    <p class="lead mb-5">Sajnáljuk, de a keresett oldal nem található. Lehet, hogy el lett távolítva, megváltozott a neve, vagy ideiglenesen nem elérhető.</p>
+                    <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg rounded-pill px-5">Vissza a főoldalra</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
