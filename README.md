@@ -1,6 +1,6 @@
-# Spéder Felújítás Weboldal
+# sped3 Weboldal
 
-Modern weboldal a Spéder Felújítás nevű építőipari vállalkozás számára.
+Modern weboldal a sped3 Felújítás nevű építőipari vállalkozás számára.
 
 ## Helyi Futtatás VS Code-ban
 
