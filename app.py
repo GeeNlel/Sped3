@@ -44,7 +44,7 @@ def load_projects():
     if os.path.exists(img_dir):
         for folder in os.listdir(img_dir):
             folder_path = os.path.join(img_dir, folder)
-            if os.path.isdir(folder_path) and folder.startswith('projekt'):
+            if os.path.isdir(folder_path):
                 project_info_path = os.path.join(folder_path, 'project_info.json')
                 if os.path.exists(project_info_path):
                     with open(project_info_path, 'r', encoding='utf-8') as f:
