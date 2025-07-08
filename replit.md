@@ -97,3 +97,4 @@ Preferred communication style: Simple, everyday language.
 Changelog:
 - July 08, 2025. Initial setup
 - July 08, 2025. Successfully migrated from Replit Agent to standard Replit environment - all dependencies installed, gunicorn server running, website fully functional
+- July 08, 2025. Implemented dynamic project system with automatic recent projects display on homepage and clickable project galleries with modal views. Removed duplicate content and category filters per user feedback.

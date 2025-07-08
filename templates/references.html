@@ -33,29 +33,14 @@
     </div>
 </section>
 
-<!-- References Filter -->
-<section class="references-filter pb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="filter-buttons text-center">
-                    <button class="btn btn-outline-primary rounded-pill m-2 filter-btn active" data-filter="all">Mind</button>
-                    <button class="btn btn-outline-primary rounded-pill m-2 filter-btn" data-filter="lakasfelujitas">Lakásfelújítás</button>
-                    <button class="btn btn-outline-primary rounded-pill m-2 filter-btn" data-filter="festés">Festés</button>
-                    <button class="btn btn-outline-primary rounded-pill m-2 filter-btn" data-filter="irodafelujitas">Irodafelújítás</button>
-                    <button class="btn btn-outline-primary rounded-pill m-2 filter-btn" data-filter="egyeb">Egyéb</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- References Gallery -->
 <section class="references-gallery py-5">
     <div class="container">
         <div class="row g-4 references-container">
             {% for project in projects %}
-            <div class="col-md-6 col-lg-4 reference-item" data-category="{{ project.category }}">
+            <div class="col-md-6 col-lg-4 reference-item">
                 <div class="reference-card" data-project-id="{{ project.id }}">
                     <div class="reference-image">
                         <img src="{{ project.images[0] }}" alt="{{ project.name }}" class="img-fluid">
@@ -98,65 +83,7 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials-section py-5 bg-light">
-    <div class="container">
-        <div class="row text-center mb-5">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="section-title">Mit mondanak ügyfeleink?</h2>
-                <p class="section-subtitle">Elégedett ügyfeleink visszajelzései munkáinkról</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="testimonial-card h-100">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating text-primary mb-3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text mb-4">"A lakásom teljes felújítását bíztam a Spéder Felújítás csapatára, és nem csalódtam. Professzionális hozzáállással, precízen és határidőre végezték el a munkát. A végeredmény minden várakozásomat felülmúlta!"</p>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="testimonial-image me-3">
-                                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd" alt="Minta Péter" class="rounded-circle" width="60" height="60">
-                            </div>
-                            <div>
-                                <h4 class="h6 mb-1">Minta Péter</h4>
-                                <p class="mb-0 text-muted">Sopron</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="testimonial-card h-100">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating text-primary mb-3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text mb-4">"Kiváló munkát végeztek a fürdőszobám felújításán. Pontosan tartották magukat a megbeszéltekhez, és a munka minősége kifogástalan. Külön értékeltem, hogy a munkaterületet minden nap tisztán hagyták maguk után."</p>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="testimonial-image me-3">
-                                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6" alt="Példa Katalin" class="rounded-circle" width="60" height="60">
-                            </div>
-                            <div>
-                                <h4 class="h6 mb-1">Példa Katalin</h4>
-                                <p class="mb-0 text-muted">Fertőd</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- CTA Section -->
 <section class="cta-section py-5">
@@ -175,30 +102,6 @@
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Filter functionality
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const referenceItems = document.querySelectorAll('.reference-item');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filter = this.dataset.filter;
-            
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Filter items
-            referenceItems.forEach(item => {
-                const category = item.dataset.category;
-                if (filter === 'all' || category === filter) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-    
     // Project modal functionality
     const viewProjectBtns = document.querySelectorAll('.view-project-btn');
     const projectModal = document.getElementById('projectModal');
