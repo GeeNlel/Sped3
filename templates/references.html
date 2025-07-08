@@ -54,208 +54,42 @@
 <section class="references-gallery py-5">
     <div class="container">
         <div class="row g-4 references-container">
-            <!-- Project 1 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="lakasfelujitas">
-                <div class="reference-card">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4 reference-item" data-category="{{ project.category }}">
+                <div class="reference-card" data-project-id="{{ project.id }}">
                     <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="Modern nappali felújítás" class="img-fluid">
+                        <img src="{{ project.images[0] }}" alt="{{ project.name }}" class="img-fluid">
                         <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
+                            <button class="btn btn-light btn-sm rounded-pill view-project-btn" data-project-id="{{ project.id }}">
+                                <i class="fas fa-images me-1"></i> Összes kép
+                            </button>
                         </div>
                     </div>
                     <div class="reference-info">
-                        <h3 class="h5 mb-2">Modern nappali felújítás</h3>
-                        <p class="mb-2">Egy családi ház nappali helyiségének teljes körű felújítása, beleértve a festést, a padló cseréjét és új világítás kiépítését.</p>
+                        <h3 class="h5 mb-2">{{ project.name }}</h3>
+                        <p class="mb-2">{{ project.description }}</p>
                         <div class="reference-meta">
-                            <span class="badge bg-primary">Lakásfelújítás</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Sopron</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2023</span>
+                            <span class="badge bg-primary">{{ project.category|title }}</span>
+                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> {{ project.location }}</span>
+                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> {{ project.year }}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Project 2 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="festés">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1689102816270-dc301aeaec35" alt="Beltéri festés" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1689102816270-dc301aeaec35" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Project Images Modal -->
+        <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLabel">Projekt képek</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Beltéri festés</h3>
-                        <p class="mb-2">Egy háromszobás lakás teljes belső festése, különös figyelemmel a részletekre és a minőségi kivitelezésre.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Festés</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Fertőd</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2023</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="irodafelujitas">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88" alt="Iroda felújítás" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1533090161767-e6ffed986c88" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
-                    </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Modern iroda kialakítás</h3>
-                        <p class="mb-2">Egy 120 m²-es irodatér teljes felújítása, új válaszfalak kialakítása, festés, világítás modernizálása.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Irodafelújítás</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Sopron</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2022</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 4 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="lakasfelujitas">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb" alt="Fürdőszoba felújítás" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1554995207-c18c203602cb" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
-                    </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Fürdőszoba felújítás</h3>
-                        <p class="mb-2">Egy régi fürdőszoba teljes felújítása, beleértve a csempézést, a szaniterek cseréjét és a vízvezetékek modernizálását.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Lakásfelújítás</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Sopron</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2022</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 5 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="festés">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf" alt="Külső homlokzatfestés" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
-                    </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Külső homlokzatfestés</h3>
-                        <p class="mb-2">Egy családi ház külső homlokzatának festése, beleértve az előkészítő munkálatokat és a fal javításait.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Festés</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Fertőrákos</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2022</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 6 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="egyeb">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34" alt="Üzlethelyiség felújítás" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1527689368864-3a821dbccc34" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
-                    </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Üzlethelyiség felújítás</h3>
-                        <p class="mb-2">Egy 80 m²-es üzlethelyiség teljes belső felújítása, új arculattal és modern megjelenéssel.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Egyéb</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Sopron</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2021</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 7 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="lakasfelujitas">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90" alt="Konyha felújítás" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1513584684374-8bab748fbf90" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
-                    </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Konyha felújítás</h3>
-                        <p class="mb-2">Egy elavult konyha teljes felújítása, új burkolatokkal, modern világítással és korszerű konyhai megoldásokkal.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Lakásfelújítás</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Sopron</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2021</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 8 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="irodafelujitas">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Irodai tárgyaló kialakítás" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
-                    </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Irodai tárgyaló kialakítás</h3>
-                        <p class="mb-2">Modern tárgyalóterem kialakítása egy meglévő irodaépületben, hangszigetelési munkálatokkal és egyedi világítási megoldásokkal.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Irodafelújítás</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Sopron</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2021</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 9 -->
-            <div class="col-md-6 col-lg-4 reference-item" data-category="egyeb">
-                <div class="reference-card">
-                    <div class="reference-image">
-                        <img src="https://images.unsplash.com/photo-1489171078254-c3365d6e359f" alt="Tetőtér beépítés" class="img-fluid">
-                        <div class="reference-overlay">
-                            <a href="https://images.unsplash.com/photo-1489171078254-c3365d6e359f" class="btn btn-light btn-sm rounded-pill gallery-popup">
-                                <i class="fas fa-search-plus me-1"></i> Nagyítás
-                            </a>
-                        </div>
-                    </div>
-                    <div class="reference-info">
-                        <h3 class="h5 mb-2">Tetőtér beépítés</h3>
-                        <p class="mb-2">Korábban kihasználatlan tetőtér lakótérré alakítása, szigeteléssel, gipszkartonozással, burkolással és fűtésrendszer kiépítésével.</p>
-                        <div class="reference-meta">
-                            <span class="badge bg-primary">Egyéb</span>
-                            <span class="text-muted ms-2"><i class="fas fa-map-marker-alt me-1"></i> Balf</span>
-                            <span class="text-muted ms-2"><i class="fas fa-calendar-alt me-1"></i> 2020</span>
+                    <div class="modal-body">
+                        <div id="projectImagesContainer">
+                            <!-- Project images will be loaded here -->
                         </div>
                     </div>
                 </div>
@@ -320,122 +154,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="testimonial-card h-100">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating text-primary mb-3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text mb-4">"Az irodánk felújítását végezte a csapat, és nagyon elégedettek vagyunk. Figyelembe vették minden kérésünket, és rugalmasan alkalmazkodtak a munkafolyamat során felmerülő változtatásokhoz. Csak ajánlani tudom őket!"</p>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="testimonial-image me-3">
-                                <img src="https://images.unsplash.com/photo-1505409628601-edc9af17fda6" alt="Sablon Gábor" class="rounded-circle" width="60" height="60">
-                            </div>
-                            <div>
-                                <h4 class="h6 mb-1">Sablon Gábor</h4>
-                                <p class="mb-0 text-muted">Sopron</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="testimonial-card h-100">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating text-primary mb-3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text mb-4">"Nagyon meg vagyok elégedve a Spéder Felújítás munkájával. A konyhám felújítása során profi tanácsokat adtak, segítettek az anyagok kiválasztásában, és a kivitelezés is kifogástalan lett. Mindenkinek ajánlom őket!"</p>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="testimonial-image me-3">
-                                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Teszt Andrea" class="rounded-circle" width="60" height="60">
-                            </div>
-                            <div>
-                                <h4 class="h6 mb-1">Teszt Andrea</h4>
-                                <p class="mb-0 text-muted">Sopron</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Process Section -->
-<section class="process-section py-5">
-    <div class="container">
-        <div class="row text-center mb-5">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="section-title">Hogyan dolgozunk?</h2>
-                <p class="section-subtitle">Ismerje meg munkafolyamatunkat a kezdetektől a befejezésig</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="process-timeline">
-                    <div class="process-item">
-                        <div class="process-number text-primary">1</div>
-                        <div class="process-content">
-                            <h3 class="h5 mb-3">Kapcsolatfelvétel</h3>
-                            <p>Vegye fel velünk a kapcsolatot telefonon, e-mailben vagy weboldalunkon keresztül, és egyeztessünk egy időpontot a helyszíni felmérésre.</p>
-                        </div>
-                    </div>
-                    <div class="process-item">
-                        <div class="process-number text-primary">2</div>
-                        <div class="process-content">
-                            <h3 class="h5 mb-3">Ingyenes felmérés</h3>
-                            <p>Szakembereink a helyszínen felmérik a munkaterületet, megbeszélik Önnel az igényeket és elvárásokat.</p>
-                        </div>
-                    </div>
-                    <div class="process-item">
-                        <div class="process-number text-primary">3</div>
-                        <div class="process-content">
-                            <h3 class="h5 mb-3">Árajánlat készítés</h3>
-                            <p>A felmérés alapján részletes, ingyenes árajánlatot készítünk, amely tartalmazza az anyag- és munkadíjakat, valamint a várható időtartamot.</p>
-                        </div>
-                    </div>
-                    <div class="process-item">
-                        <div class="process-number text-primary">4</div>
-                        <div class="process-content">
-                            <h3 class="h5 mb-3">Kivitelezés</h3>
-                            <p>Az árajánlat elfogadása után megkezdjük a kivitelezést a megbeszélt időpontban, folyamatosan tájékoztatva Önt a projekt állásáról.</p>
-                        </div>
-                    </div>
-                    <div class="process-item">
-                        <div class="process-number text-primary">5</div>
-                        <div class="process-content">
-                            <h3 class="h5 mb-3">Átadás</h3>
-                            <p>A munka végeztével közösen átnézzük az elvégzett feladatokat, és tiszta, rendezett környezetet adunk át Önnek.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section py-5 bg-primary text-white text-center">
+<section class="cta-section py-5">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h2 class="mb-4">Kész a saját projektjének megvalósítására?</h2>
-                <p class="lead mb-4">Vegye fel velünk a kapcsolatot és kérjen ingyenes helyszíni felmérést, árajánlatot!</p>
-                <div class="cta-buttons">
-                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg px-4 rounded-pill me-3">Kapcsolatfelvétel</a>
-                    <a href="tel:+36201234567" class="btn btn-outline-light btn-lg px-4 rounded-pill">
-                        <i class="fas fa-phone me-2"></i>+36 20 123 4567
-                    </a>
-                </div>
+        <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title text-white">Kérjen ingyenes árajánlatot!</h2>
+                <p class="section-subtitle text-white-50">Vegye fel velünk a kapcsolatot még ma, és kapjon személyre szabott ajánlatot projektjére.</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg px-4 rounded-pill">Kapcsolat</a>
             </div>
         </div>
     </div>
@@ -444,70 +174,68 @@
 
 {% block extra_js %}
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const referenceItems = document.querySelectorAll('.reference-item');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filter = this.getAttribute('data-filter');
-                
-                referenceItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Simple lightbox for images
-        const galleryPopups = document.querySelectorAll('.gallery-popup');
-        
-        galleryPopups.forEach(popup => {
-            popup.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const imageUrl = this.getAttribute('href');
-                
-                // Create lightbox elements
-                const lightbox = document.createElement('div');
-                lightbox.className = 'lightbox';
-                
-                const lightboxContent = document.createElement('div');
-                lightboxContent.className = 'lightbox-content';
-                
-                const lightboxImage = document.createElement('img');
-                lightboxImage.src = imageUrl;
-                
-                const closeButton = document.createElement('span');
-                closeButton.className = 'lightbox-close';
-                closeButton.innerHTML = '&times;';
-                
-                // Append elements
-                lightboxContent.appendChild(lightboxImage);
-                lightboxContent.appendChild(closeButton);
-                lightbox.appendChild(lightboxContent);
-                document.body.appendChild(lightbox);
-                
-                // Close lightbox on click
-                lightbox.addEventListener('click', function() {
-                    document.body.removeChild(lightbox);
-                });
-                
-                // Prevent propagation on image click
-                lightboxImage.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
+document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const referenceItems = document.querySelectorAll('.reference-item');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.dataset.filter;
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter items
+            referenceItems.forEach(item => {
+                const category = item.dataset.category;
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
             });
         });
     });
+    
+    // Project modal functionality
+    const viewProjectBtns = document.querySelectorAll('.view-project-btn');
+    const projectModal = document.getElementById('projectModal');
+    const projectImagesContainer = document.getElementById('projectImagesContainer');
+    
+    viewProjectBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const projectId = this.dataset.projectId;
+            
+            // Fetch project data
+            fetch(`/api/project/${projectId}`)
+                .then(response => response.json())
+                .then(project => {
+                    // Update modal title
+                    document.getElementById('projectModalLabel').textContent = project.name;
+                    
+                    // Clear and populate images
+                    projectImagesContainer.innerHTML = '';
+                    
+                    project.images.forEach((imageUrl, index) => {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'mb-3';
+                        imageDiv.innerHTML = `
+                            <img src="${imageUrl}" alt="${project.name} - ${index + 1}" class="img-fluid rounded">
+                        `;
+                        projectImagesContainer.appendChild(imageDiv);
+                    });
+                    
+                    // Show modal
+                    const modal = new bootstrap.Modal(projectModal);
+                    modal.show();
+                })
+                .catch(error => {
+                    console.error('Error fetching project data:', error);
+                });
+        });
+    });
+});
 </script>
 {% endblock %}
