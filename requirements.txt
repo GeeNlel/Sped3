@@ -1,2 +1,7 @@
 flask==2.3.3
 gunicorn==21.2.0
+email_validator
+flask
+flask-sqlalchemy
+gunicorn
+psycopg2-binary
